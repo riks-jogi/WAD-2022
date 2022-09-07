@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  display: grid;
+  grid-template-areas: "gif1 header gif2" "gif1 body gif2";
+  width: 100%;
+  height: 100vh;
+  place-items: center;
+  background-color: #232323;
+  color: #f8f8f8;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  grid-area: header;
+  align-self: end;
+  font-size: 3rem;
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: -2px;
+  text-align: center;
+}
+
+p {
+  grid-area: body;
+  align-self: start;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.gif1 {
+  grid-area: gif1;
+  width: 20vw;
+  object-fit: contain;
+}
+
+.gif2 {
+  grid-area: gif2;
+  width: 20vw;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 1240px) {
+  body {
+    grid-template-areas: "header header" "body body" "gif1 gif2";
+  }
+  .gif1,
+  .gif2 {
+    width: 40vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    grid-template-areas: "header" "body" "gif1" "gif2";
+  }
+  .gif1,
+  .gif2 {
+    width: auto;
+    max-height: 30vh;
+  }
+}
